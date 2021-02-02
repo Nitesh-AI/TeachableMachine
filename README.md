@@ -1,5 +1,5 @@
 # TeachableMahcine 
 
 
-<a href="https://teachablemachine.withgoogle.com/models/LvAfqZu-S/">Click Me</a>
+<a href="https://nitesh-ai.github.io/TeachableMahcine/">Click Me</a>
 
