@@ -17,18 +17,22 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(displayWidth, displayHeight);
-  var constraints = {
-    audio: false, 
+  canvas = createCanvas(400, 600);
+ video =  createCapture({
+    audio: false,
     video: {
-      facingMode: "user"
-    } 
-  };
-  capture = createCapture(constraints);
-  
-  capture.hide();
+      facingMode: {
+        exact: "environment"
+      }
+    }
+  });
+  //But hide the live video to the user
+  video.hide();
+  //Set the size of the video (and image)
+  video.size(320, 240);
 
-  flippedVideo = ml5.flipImage(capture)
+
+  flippedVideo = ml5.flipImage(video)
   // Start classifying
   classifyVideo();
 }
@@ -47,7 +51,7 @@ function draw() {
 
 // Get a prediction for the current video frame
 function classifyVideo() {
-  flippedVideo = ml5.flipImage(capture)
+  flippedVideo = ml5.flipImage(video)
   classifier.classify(flippedVideo, gotResult);
 }
 
