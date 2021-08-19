@@ -6,7 +6,7 @@ let imageModelURL = 'https://teachablemachine.withgoogle.com/models/bXy2kDNi/';
 // Video
 let video;
 
-var capture;
+let capture;
 let flippedVideo;
 // To store the classification
 let label = "";
