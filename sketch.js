@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(1200, 1100);
+  canvas = createCanvas(800, 800);
  video =  createCapture({
     audio: false,
     video: {
@@ -29,7 +29,7 @@ function setup() {
   //But hide the live video to the user
   video.hide();
   //Set the size of the video (and image)
-  video.size(1200, 1100);
+  video.size(800, 800);
 
 
   flippedVideo = ml5.flipImage(video)
