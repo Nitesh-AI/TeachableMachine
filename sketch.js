@@ -52,7 +52,7 @@ function draw() {
 
 // Get a prediction for the current video frame
 function classifyVideo() {
-  flippedVideo = ml5.flipImage(video)
+  flippedVideo = ml5.flipImage(capture)
   classifier.classify(flippedVideo, gotResult);
 }
 
