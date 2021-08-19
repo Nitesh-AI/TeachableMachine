@@ -1,21 +1,12 @@
-// Copyright (c) 2019 ml5
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
-
-/* ===
-ml5 Example
-Webcam Image Classification using a pre-trained customized model and p5.js
-This example uses p5 preload function to create the classifier
-=== */
-
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/s0JA_6wh9/';
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/bXy2kDNi/';
 
 // Video
 let video;
+
+var capture;
 let flippedVideo;
 // To store the classification
 let label = "";
@@ -26,13 +17,23 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 600);
-  // Create the video
-  video = createCapture(VIDEO);
-  video.size(600, 600);
-  video.hide();
+  createCanvas(displayWidth, displayHeight);
+  var constraints = {
+    audio: false,
+    video: {
+      facingMode: {
+        exact: "environment"
+      }
+    }    
+    //video: {
+      //facingMode: "user"
+    //} 
+  };
+  capture = createCapture(constraints);
+  
+  capture.hide();
 
-  flippedVideo = ml5.flipImage(video)
+  flippedVideo = ml5.flipImage(capture)
   // Start classifying
   classifyVideo();
 }
