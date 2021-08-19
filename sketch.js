@@ -17,7 +17,10 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(800, 800);
+  var cnv = createCanvas(800, 800);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
  video =  createCapture({
     audio: false,
     video: {
