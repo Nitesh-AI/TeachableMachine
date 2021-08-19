@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(320, 260);
+  createCanvas(displayWidth, displayHeight);
   var constraints = {
     audio: false, 
     video: {
@@ -42,7 +42,7 @@ function draw() {
   fill(255);
   textSize(16);
   textAlign(CENTER);
-  text(label, width / 2, height - 4);
+  text(label, displaywidth / 2, displayheight - 4);
 }
 
 // Get a prediction for the current video frame
