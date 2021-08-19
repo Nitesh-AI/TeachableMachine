@@ -46,7 +46,7 @@ function draw() {
   fill(255);
   textSize(16);
   textAlign(CENTER);
-  text(label, displaywidth / 2, displayheight - 4);
+  text(label, width / 2, height - 4);
 }
 
 // Get a prediction for the current video frame
