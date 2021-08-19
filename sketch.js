@@ -19,15 +19,10 @@ function preload() {
 function setup() {
   createCanvas(320, 260);
   var constraints = {
-    audio: false,
+    audio: false, 
     video: {
-      facingMode: {
-        exact: "environment"
-      }
-    }    
-    //video: {
-      //facingMode: "user"
-    //} 
+      facingMode: "environment"
+    } 
   };
   capture = createCapture(constraints);
   
